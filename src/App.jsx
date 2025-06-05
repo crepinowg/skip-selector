@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       {/* Header section with sticky position */}
-      <div className="sticky top-0 p-0.5 z-30  items-center justify-center flex-col" style={{ backgroundColor: "#242424" }}>
+      <div className="sticky top-0 p-0.5 z-30  items-center justify-center flex-col" style={{ backgroundColor: "#111827" }}>
         <h2 className="poppins text-4xl font-semibold tracking-tight text-gray-2000 dark:text-white">
           Choose Your Skip Size
         </h2>

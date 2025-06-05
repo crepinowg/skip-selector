@@ -229,7 +229,7 @@ const SkipCard = ({ skips }) => {
                 onClick={() => handleSelect(skip.id)}
                 className={`poppins rounded-none p-4 bg-cyan-700 px-6 py-3.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 ${
                   skip.id === selectedSkip.id
-                    ? "dark:bg-green-500"
+                    ? "dark:bg-yellow-600"
                     : "dark:bg-yellow-400"
                 }  dark:hover:bg-yellow-500 dark:focus:ring-cyan-800`}
               >

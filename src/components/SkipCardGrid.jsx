@@ -1,4 +1,5 @@
 // Importing necessary components, images, and icons
+import { useState, useEffect } from "react";
 import { Card } from "flowbite-react";
 import skip4Yard from "../assets/Skip-Sizes-3D_4-Yard.webp";
 import skip6Yard from "../assets/Skip-Sizes-3D_6-yard.webp";
@@ -23,6 +24,10 @@ const SkipCardGrid = ({ skip, isSelected, onSelect }) => {
     40: skip12Yard,
   };
 
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => setDarkMode(!darkMode);
+
   // Get image source based on skip size
   const imageSrc = imageMap[skip.size] || skipDefault;
 
@@ -33,12 +38,13 @@ const SkipCardGrid = ({ skip, isSelected, onSelect }) => {
         className={`rounded-none p-1 flex flex-col items-center justify-center mt-10 gap-6 w-full ${
           isSelected ? "bg-yellow-400" : "bg-white hover:bg-yellow-400"
         }`}
-      >
+      > 
         {/* Card component wrapping the entire content */}
         <Card
           onClick={onSelect}
           className=" bg-green-400 rounded-none p-4 cursor-pointer"
         >
+          
           <div className="flex flex-col lg:flex-row w-full gap-6">
             {/* Left section: image and skip info */}
             <div className="flex flex-col lg:flex-row w-full lg:w-2/3 gap-4">
@@ -57,7 +63,7 @@ const SkipCardGrid = ({ skip, isSelected, onSelect }) => {
                   </h2>
                 </a>
 
-                <p className="italic text-sm font-thin text-white text-start">
+                <p className="italic text-sm font-light text-white text-start">
                   Perfect for general waste and bulky items.
                 </p>
 

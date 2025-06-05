@@ -1,9 +1,9 @@
 // Importing necessary components, images, and icons
 import { Card } from "flowbite-react";
 import skip4Yard from "../assets/Skip-Sizes-3D_4-Yard.webp";
-import skip6Yard from "../assets/Skip-Sizes-3D_6-Yard.webp";
-import skip8Yard from "../assets/Skip-Sizes-3D_8-Yard.webp";
-import skip12Yard from "../assets/Skip-Sizes-3D_12-Yard.webp";
+import skip6Yard from "../assets/Skip-Sizes-3D_6-yard.webp";
+import skip8Yard from "../assets/Skip-Sizes-3D_8-yard.webp";
+import skip12Yard from "../assets/Skip-Sizes-3D_12-yard.webp";
 import { FaLocationDot, FaClock, FaCheck } from "react-icons/fa6";
 import { GiMineTruck, GiWeight } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";

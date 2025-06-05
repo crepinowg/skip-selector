@@ -7,9 +7,9 @@ import { RxCross2 } from "react-icons/rx";
 
 // Importing skip size images
 import skip4Yard from "../assets/Skip-Sizes-3D_4-Yard.webp";
-import skip6Yard from "../assets/Skip-Sizes-3D_6-Yard.webp";
-import skip8Yard from "../assets/Skip-Sizes-3D_8-Yard.webp";
-import skip12Yard from "../assets/Skip-Sizes-3D_12-Yard.webp";
+import skip6Yard from "../assets/Skip-Sizes-3D_6-yard.webp";
+import skip8Yard from "../assets/Skip-Sizes-3D_8-yard.webp";
+import skip12Yard from "../assets/Skip-Sizes-3D_12-yard.webp";
 
 // Component that displays information about available skips
 const SkipCard = ({ skips }) => {

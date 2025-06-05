@@ -11,7 +11,7 @@ This interface offers a responsive and smooth user experience, broken down into 
 
 ## Responsive Design
 
-Particular attention was given to mobile and tablet compatibility:
+Particular attention was given to mobile, tablett and desktop compatibility:
 
 - Use of Flexbox and TailwindCSS to adapt the layout across screen sizes
 - Vertical layout on smaller screens, grid layout on larger ones (SkipCardGrid)
@@ -44,9 +44,9 @@ SkipModule/
 |-----------------------|----------------------------------------------------------------------------------------------|
 | `SkipCard.jsx`        | Main visual component displaying a skip: image, pricing, options, volume, rental period.    |
 | `SkipCardGrid.jsx`    | Responsive grid layout handling the display of multiple skip cards.                         |
-| `SkipData.jsx`        | Contains static data about skip options (sizes, prices, features).                          |
+| `SkipData.jsx`        | Contains fetch api data about skip options (sizes, prices, features).                          |
 | `LoadingSpinner.jsx`  | Animated spinner shown while loading data.                                                  |
-| `ToastWithButton.jsx` | Custom toast notification with button for confirmation/cancellation.                        |
+| `ToastWithButton.jsx` | Custom toast with button for confirmation/cancellation.                        |
 
 ---
 

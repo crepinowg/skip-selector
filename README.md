@@ -1,27 +1,27 @@
 
+# SkipCard Component – Technical Documentation
 
-### SkipCard Component – Technical Documentation
-
-# Description
+## Description
 
 The SkipCard component is an interactive user interface built in React, designed to allow users to view and select waste container options (skips) based on various sizes and features (public road permit, price, weight, volume, etc.).
 
 This interface offers a responsive and smooth user experience, broken down into reusable components to enhance readability and maintainability.
 
-⸻
+---
 
-# Responsive Design
+## Responsive Design
 
 Particular attention was given to mobile and tablet compatibility:
-	•	use of Flexbox and TailwindCSS to adapt the layout across screen sizes;
-	•	vertical layout on smaller screens, grid layout on larger ones (SkipCardGrid);
-	•	size, spacing, and font adjustments for optimal readability.
 
-⸻
+- Use of Flexbox and TailwindCSS to adapt the layout across screen sizes
+- Vertical layout on smaller screens, grid layout on larger ones (SkipCardGrid)
+- Size, spacing, and font adjustments for optimal readability
 
-# Project Architecture
+---
 
-The folder includes the following components:
+## Project Architecture
+
+The folder includes the following structure:
 
 SkipModule/
 │
@@ -36,41 +36,48 @@ SkipModule/
 │   ├── Skip-Sizes-3D_8-Yard.webp
 │   └── Skip-Sizes-3D_12-Yard.webp
 
+---
 
-⸻
+## Component Descriptions
 
-# Component Descriptions
+| Component             | Purpose                                                                                      |
+|-----------------------|----------------------------------------------------------------------------------------------|
+| `SkipCard.jsx`        | Main visual component displaying a skip: image, pricing, options, volume, rental period.    |
+| `SkipCardGrid.jsx`    | Responsive grid layout handling the display of multiple skip cards.                         |
+| `SkipData.jsx`        | Contains static data about skip options (sizes, prices, features).                          |
+| `LoadingSpinner.jsx`  | Animated spinner shown while loading data.                                                  |
+| `ToastWithButton.jsx` | Custom toast notification with button for confirmation/cancellation.                        |
 
-Component	Purpose
-SkipCard.jsx	The main visual component representing a skip: image, pricing, options, volume, rental period, etc.
-SkipCardGrid.jsx	Handles the responsive grid layout to display all SkipCard components.
-SkipData.jsx	Stores static data about the different skip options (sizes, prices, features).
-LoadingSpinner.jsx	Displays an animated loading spinner while data is being fetched.
-ToastWithButton.jsx	A custom toast notification component with a button for confirming or cancelling an action.
+---
 
+## Internal Functionality
 
-⸻
+- Data is imported from `SkipData.jsx` (JavaScript object or simulated JSON).
+- Uses `useState` and `useEffect` for state management and dynamic rendering.
+- Dynamically maps images using `imageMap` based on skip size.
+- Displays checkmarks for available options (heavy waste, public road access, etc.).
 
-# Internal Functionality
-	•	Data is imported from SkipData.jsx (JavaScript object or simulated JSON database).
-	•	Uses useState and useEffect to manage the selected skip dynamically.
-	•	Dynamically maps images using an imageMap depending on the skip size.
-	•	Checkmarks highlight available options (heavy waste, public road access, etc.).
+---
 
-⸻
+## Key Features
 
-# Key Features
-	•	Dynamic selection of a skip with immediate UI updates;
-	•	Organized display of all skip specifications;
-	•	Fully responsive grid view with SkipCardGrid;
-	•	Custom toast system with optional action;
-	•	Loading animation while fetching data.
+- Dynamic skip selection with real-time UI updates
+- Clear and structured display of skip information
+- Fully responsive layout with SkipCardGrid
+- Custom toast system with user actions
+- Smooth loading experience with spinner animation
 
-⸻
+---
 
-# Technologies Used
-	•	React – for component logic and state management;
-	•	TailwindCSS – for fast and responsive styling using utility classes;
-	•	Flowbite React – for additional UI components;
-	•	React Icons – for modern and accessible icons.
+## Technologies Used
 
+- React – For component logic and state management
+- TailwindCSS – Utility-first CSS framework for responsive design
+- Flowbite React – UI component library for React + Tailwind
+- React Icons – Icon library for modern and accessible icons
+
+---
+
+## Author Notes
+
+This module was carefully built to support both desktop and mobile displays. It provides a clean, functional base for skip container management and can be easily integrated into booking or logistics systems.

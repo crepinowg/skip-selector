@@ -1,16 +1,14 @@
 "use client";
 
 import {
-  Button,
   Timeline,
   TimelineBody,
   TimelineContent,
   TimelineItem,
   TimelinePoint,
   TimelineTime,
-  TimelineTitle,
 } from "flowbite-react";
-import { HiArrowNarrowRight, HiCalendar } from "react-icons/hi";
+import { HiCalendar } from "react-icons/hi";
 const ProgressBar = () => {
   return (
     <Timeline horizontal className="sticky top-5 p-3 z-30  items-center justify-center flex-row">

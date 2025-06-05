@@ -4,38 +4,53 @@ import { FaLocationDot, FaClock, FaCheck } from "react-icons/fa6";
 import { GiMineTruck, GiWeight } from "react-icons/gi";
 import { RiPercentFill } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";
+
+// Importing skip size images
 import skip4Yard from "../assets/Skip-Sizes-3D_4-Yard.webp";
 import skip6Yard from "../assets/Skip-Sizes-3D_6-Yard.webp";
 import skip8Yard from "../assets/Skip-Sizes-3D_8-Yard.webp";
 import skip12Yard from "../assets/Skip-Sizes-3D_12-Yard.webp";
+
+// Component that displays information about available skips
 const SkipCard = ({ skips }) => {
+  // State to store the currently selected skip
   const [selectedSkip, setSelectedSkip] = useState(skips[0]);
+
+  // Mapping skip sizes to corresponding images
   const imageMap = {
     4: skip4Yard,
     6: skip4Yard,
     8: skip6Yard,
     10: skip6Yard,
     12: skip6Yard,
-    14: skip6Yard,
+    14: skip8Yard,
     16: skip8Yard,
     20: skip12Yard,
     40: skip12Yard,
   };
 
+  // Getting image source based on selected skip size
   const imageSrc = imageMap[selectedSkip.size] || skipDefault;
+
+  // Update selected skip when the skips prop changes
   useEffect(() => {
     if (skips && skips.length > 0) {
       setSelectedSkip(skips[0]);
     }
   }, [skips]);
 
+  // Function to update the selected skip based on user selection
   const handleSelect = (id) => {
     const skip = skips.find((s) => s.id === id);
     setSelectedSkip(skip);
   };
+
   return (
     <>
+      {/* Layout with two cards: skip image and skip details */}
       <div className="flex flex-row items-start space-x-10 justify-center h-screen mt-10 ml-20">
+        
+        {/* Left card displaying skip image and price */}
         <Card
           className="w-2/5 rounded-none p-4"
           imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
@@ -44,11 +59,15 @@ const SkipCard = ({ skips }) => {
           <a href="#">
             <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"></h5>
           </a>
+
+          {/* Skip size badge */}
           <div className="mb-5 mt-2.5 flex items-start">
             <span className="poppins mr-2 rounded-none bg-cyan-100 px-2.5 py-0.5 text-lg font-semibold text-cyan-800 dark:bg-green-300 dark:text-green-700">
               {selectedSkip?.size} YARD SKIP
             </span>
           </div>
+
+          {/* Price and action button */}
           <div>
             <div className="flex items-center justify-between pt-5">
               <span className=" text-3xl font-bold text-gray-900 dark:text-white">
@@ -61,6 +80,8 @@ const SkipCard = ({ skips }) => {
                 Choose & Continue
               </a>
             </div>
+
+            {/* VAT info */}
             <div className="flex items-center">
               <RiPercentFill className="text-xs text-green-2000 dark:text-green-600 mr-1" />
               <p className="poppins italic text-xs text-gray-2000 dark:text-white">
@@ -70,6 +91,7 @@ const SkipCard = ({ skips }) => {
           </div>
         </Card>
 
+        {/* Right card displaying detailed skip info */}
         <Card
           className="w-2/4 bg-red-900 rounded-none p-4"
           imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
@@ -79,6 +101,8 @@ const SkipCard = ({ skips }) => {
               {selectedSkip?.size} yard skip
             </h2>
           </a>
+
+          {/* Price and VAT badge */}
           <div className="mb-5 mt-2.5 flex items-center">
             <h2 className="poppins text-lg font-semibold tracking-tight text-gray-2000 dark:text-white">
               From{" "}
@@ -88,6 +112,8 @@ const SkipCard = ({ skips }) => {
               excl. VAT ({selectedSkip?.vat}%)
             </h2>
           </div>
+
+          {/* Description and disclaimer */}
           <div className="mb-5 mt-2.5 flex items-center">
             <h2 className=" italic poppins text-xl font-thin tracking-tight text-gray-2000 dark:text-white  ">
               Perfect for general waste and bulky items.
@@ -98,6 +124,8 @@ const SkipCard = ({ skips }) => {
               </p>
             </h2>
           </div>
+
+          {/* Rental and transport details */}
           <div className="mb-5 mt-2.5  items-center">
             <div className="flex items-center mb-6">
               <FaClock className="text-lg text-gray-2000 dark:text-white mr-2" />
@@ -114,6 +142,7 @@ const SkipCard = ({ skips }) => {
               </p>
             </div>
 
+            {/* Weight and location */}
             <div className="flex items-center">
               <GiWeight className="text-lg text-gray-2000 dark:text-white mr-2" />
               <p className="poppins text-sm text-gray-2000 dark:text-white mr-6">
@@ -130,13 +159,14 @@ const SkipCard = ({ skips }) => {
             </div>
           </div>
 
+          {/* Conditions: road, booking, heavy waste */}
           <div className="mb-5 mt-2.5  items-center">
             <div className="flex items-center mb-6 gap-2">
+              {/* Road permission */}
               <div className="flex items-center">
                 {selectedSkip?.allowed_on_road ? (
                   <>
                     <FaCheck className="text-lg text-green-400 mr-2" />
-
                     <p className="poppins text-sm text-white">
                       Allowed on the road
                     </p>
@@ -151,11 +181,11 @@ const SkipCard = ({ skips }) => {
                 )}
               </div>
 
+              {/* Booking availability */}
               <div className="flex items-center">
                 {!selectedSkip?.forbidden ? (
                   <>
                     <FaCheck className="text-lg text-green-400 mr-2" />
-
                     <p className="poppins text-sm text-white">
                       Booking allowed for this skip.
                     </p>
@@ -171,6 +201,7 @@ const SkipCard = ({ skips }) => {
               </div>
             </div>
 
+            {/* Heavy waste condition */}
             <div className="flex items-center">
               {selectedSkip?.allows_heavy_waste ? (
                 <>
@@ -189,6 +220,8 @@ const SkipCard = ({ skips }) => {
               )}
             </div>
           </div>
+
+          {/* List of available skips to select from */}
           <div className="flex flex-wrap gap-4  border-red-500 cursor-pointer">
             {skips.map((skip) => (
               <a
